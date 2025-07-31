@@ -320,7 +320,7 @@ class User(Document):
 				self.set(field, sanitize_html(field_value, always_sanitize=True))
 
 	def set_full_name(self):
-		self.full_name = " ".join(filter(None, [self.first_name, self.last_name]))
+		self.full_name = " ".join(filter(None, [self.last_name, self.first_name]))
 
 	def check_enable_disable(self):
 		# do not allow disabling administrator/guest
